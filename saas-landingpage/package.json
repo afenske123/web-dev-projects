@@ -1,0 +1,12 @@
+{
+  "name": "saas-landingpage-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fiktive B2B-SaaS-Landingpage (Portfolio-Demoprojekt) fuer Sentrix, eine Observability- und Incident-Intelligence-Plattform.",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeWelle Conf 2026 – Die Konferenz für Web, Cloud &amp; Software-Craft</title>
+<meta name="description" content="CodeWelle Conf 2026 im Rheinforum Congress Center, Mittelstadt am Rhein – Talks zu Architektur, Frontend, Security und mehr. Fiktives Demo-Projekt.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#hauptinhalt">Zum Hauptinhalt springen</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#hero" aria-label="CodeWelle Conf – Startseite">
+      <svg class="brand__mark" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" stroke="url(#brandGrad)" stroke-width="2"/>
+        <path d="M9 20c2.5-6 5.5-9 8-9s5.5 3 8 9" stroke="url(#brandGrad)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="17" cy="12" r="2.4" fill="url(#brandGrad)"/>
+        <defs>
+          <linearGradient id="brandGrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6D8CFF"/>
+            <stop offset="1" stop-color="#B98CFF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>CodeWelle <strong>Conf</strong></span>
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="#sprecher">Sprecher</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#tickets">Tickets</a>
+      <a href="#anmeldung">Anmeldung</a>
+    </nav>
+    <a class="btn btn--ghost btn--small nav-cta" href="#anmeldung">Jetzt anmelden</a>
+  </div>
+</header>
+
+<main id="hauptinhalt">
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <svg class="hero__pattern" aria-hidden="true" width="100%" height="100%" preserveAspectRatio="none">
+      <defs>
+        <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M48 0H0V48" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)"/>
+    </svg>
+
+    <div class="container hero__inner">
+      <p class="eyebrow">12.–13. November 2026 · Rheinforum Congress Center · Mittelstadt am Rhein</p>
+      <h1 class="hero__title">Zwei Tage Code, Cloud <span class="accent-text">&amp; Community</span></h1>
+      <p class="hero__lead">
+        CodeWelle Conf ist die Konferenz für Menschen, die Software mit Sorgfalt bauen –
+        mit Talks zu Architektur, Frontend, Security und nachhaltigen Teams. Ein fiktives
+        Demo-Event zu Übungszwecken.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#tickets" class="btn btn--primary">Tickets ansehen</a>
+        <a href="#agenda" class="btn btn--ghost">Zur Agenda</a>
+      </div>
+
+      <div class="countdown" id="countdown" role="timer" aria-live="polite">
+        <div class="countdown__unit">
+          <span class="countdown__value" id="countdown-tage">--</span>
+          <span class="countdown__label">Tage</span>
+        </div>
+        <div class="countdown__sep" aria-hidden="true">:</div>
+        <div class="countdown__unit">
+          <span class="countdown__value" id="countdown-stunden">--</span>
+          <span class="countdown__label">Stunden</span>
+        </div>
+        <div class="countdown__sep" aria-hidden="true">:</div>
+        <div class="countdown__unit">
+          <span class="countdown__value" id="countdown-minuten">--</span>
+          <span class="countdown__label">Minuten</span>
+        </div>
+        <div class="countdown__sep" aria-hidden="true">:</div>
+        <div class="countdown__unit">
+          <span class="countdown__value" id="countdown-sekunden">--</span>
+          <span class="countdown__label">Sekunden</span>
+        </div>
+      </div>
+      <p class="countdown__status" id="countdown-status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- SPRECHER -->
+  <section id="sprecher" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Sprecher</p>
+      <h2 class="section__title">Menschen, die etwas zu erzählen haben</h2>
+      <p class="section__lead">Sechs fiktive Speaker:innen aus Architektur, Frontend, Security und Produktentwicklung.</p>
+
+      <div class="speaker-grid" id="sprecher-grid" aria-live="polite">
+        <!-- wird per TypeScript befüllt -->
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section id="agenda" class="section section--muted">
+    <div class="container">
+      <p class="section__eyebrow">Zeitplan</p>
+      <h2 class="section__title">Agenda</h2>
+      <p class="section__lead">Drei parallele Tracks plus zwei Keynotes. Filtere nach dem, was dich interessiert.</p>
+
+      <div class="agenda-filter" id="agenda-filter" role="group" aria-label="Agenda nach Track filtern">
+        <button type="button" class="filter-btn is-active" data-track="Alle">Alle</button>
+        <button type="button" class="filter-btn" data-track="Keynote">Keynotes</button>
+        <button type="button" class="filter-btn" data-track="A">Track A · Architektur</button>
+        <button type="button" class="filter-btn" data-track="B">Track B · Frontend</button>
+        <button type="button" class="filter-btn" data-track="C">Track C · Security &amp; Kultur</button>
+      </div>
+
+      <ul class="agenda-liste" id="agenda-liste" aria-live="polite">
+        <!-- wird per TypeScript befüllt -->
+      </ul>
+      <p class="agenda-leer" id="agenda-leer" hidden>Für diesen Track sind aktuell keine Talks eingeplant.</p>
+    </div>
+  </section>
+
+  <!-- TICKETS -->
+  <section id="tickets" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Ticket-Preise</p>
+      <h2 class="section__title">Wähle dein Ticket</h2>
+      <p class="section__lead">Alle Preise verstehen sich zzgl. MwSt. Kontingente sind begrenzt.</p>
+
+      <div class="ticket-grid" id="tickets-grid">
+        <!-- wird per TypeScript befüllt -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ANMELDUNG -->
+  <section id="anmeldung" class="section section--muted">
+    <div class="container container--narrow">
+      <p class="section__eyebrow">Anmeldung</p>
+      <h2 class="section__title">Sichere dir deinen Platz</h2>
+      <p class="section__lead">Trage dich unverbindlich in unsere Anmeldeliste ein. Es findet keine echte Buchung statt.</p>
+
+      <form class="registration-form" id="anmelde-form" novalidate>
+        <div class="form-row">
+          <label for="feld-name">Name *</label>
+          <input type="text" id="feld-name" name="name" autocomplete="name" placeholder="Vor- und Nachname">
+          <p class="form-error" id="fehler-name" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="feld-email">E-Mail-Adresse *</label>
+          <input type="email" id="feld-email" name="email" autocomplete="email" placeholder="name@beispiel.de">
+          <p class="form-error" id="fehler-email" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="feld-firma">Firma / Organisation (optional)</label>
+          <input type="text" id="feld-firma" name="firma" autocomplete="organization" placeholder="z. B. Musterfirma GmbH">
+        </div>
+
+        <div class="form-row">
+          <label for="feld-ticket">Ticket-Typ *</label>
+          <select id="feld-ticket" name="ticketTyp">
+            <option value="">Bitte wählen …</option>
+            <option value="Early Bird">Early Bird</option>
+            <option value="Standard">Standard</option>
+            <option value="Team">Team (ab 3 Personen)</option>
+          </select>
+          <p class="form-error" id="fehler-ticket" role="alert"></p>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--block">Anmeldung absenden</button>
+      </form>
+
+      <div class="registration-success" id="anmelde-erfolg" hidden aria-live="polite">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" stroke="url(#successGrad)" stroke-width="2"/>
+          <path d="M12 21l5.5 5.5L28 14" stroke="url(#successGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <defs>
+            <linearGradient id="successGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6D8CFF"/>
+              <stop offset="1" stop-color="#4EE6C7"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h3>Anmeldung erfolgreich (Demo)</h3>
+        <p>Vielen Dank, <strong id="erfolg-name"></strong>! Deine Bestätigungsnummer lautet:</p>
+        <p class="confirmation-code" id="erfolg-code"></p>
+        <p class="registration-success__hint">Hinweis: Es wurde keine echte E-Mail versendet – dies ist ein reines Demo-Formular ohne Serveranbindung.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__col">
+      <div class="brand brand--footer">
+        <svg width="28" height="28" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <circle cx="17" cy="17" r="16" stroke="url(#footerGrad)" stroke-width="2"/>
+          <path d="M9 20c2.5-6 5.5-9 8-9s5.5 3 8 9" stroke="url(#footerGrad)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="17" cy="12" r="2.4" fill="url(#footerGrad)"/>
+          <defs>
+            <linearGradient id="footerGrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6D8CFF"/>
+              <stop offset="1" stop-color="#B98CFF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>CodeWelle <strong>Conf</strong></span>
+      </div>
+      <p class="site-footer__desc">
+        Ein fiktives Konferenz-Demo-Projekt zu Übungszwecken – keine reale Veranstaltung,
+        keine reale Organisation.
+      </p>
+    </div>
+
+    <div class="site-footer__col">
+      <h3>Veranstaltungsort</h3>
+      <address>
+        Rheinforum Congress Center<br>
+        Uferpromenade 14<br>
+        65XXX Mittelstadt am Rhein
+      </address>
+    </div>
+
+    <div class="site-footer__col">
+      <h3>Kontakt (fiktiv)</h3>
+      <p>hallo@codewelle-conf.example</p>
+      <p>+49 (0) 6xxx / xx xx xx0</p>
+    </div>
+
+    <div class="site-footer__col">
+      <h3>Rechtliches</h3>
+      <p>Dies ist ein privates Portfolio-/Übungsprojekt. Alle Namen, Firmen und
+      Angaben sind frei erfunden.</p>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>&copy; 2026 CodeWelle Conf – Demo-Projekt. Kein echtes Event.</p>
+  </div>
+</footer>
+
+<script src="dist/main.js"></script>
+</body>
+</html>

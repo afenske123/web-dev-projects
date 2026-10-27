@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lichtform Fotografie — Porträt · Landschaft · Architektur · Reportage</title>
+<meta name="description" content="Portfolio-Demoseite der fiktiven Fotografin Nora Vahlberg (Lichtform Fotografie). Alle gezeigten Bilder sind CSS/SVG-generierte Platzhalter, keine echten Fotografien.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
+
+<header class="kopfzeile">
+  <div class="container kopfzeile__inner">
+    <a href="#top" class="logo">Lichtform<span class="logo__punkt">.</span></a>
+    <nav class="hauptnav" aria-label="Hauptnavigation">
+      <a href="#galerie">Galerie</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="hauptinhalt">
+
+  <section id="top" class="hero">
+    <div class="container hero__inner">
+      <p class="hero__eyebrow">Fotografie-Studio · Leipzig</p>
+      <h1 class="hero__titel">Nora Vahlberg</h1>
+      <p class="hero__tagline">Licht ist die Sprache, in der ich erzähle — leise Porträts, weite Landschaften und die Geometrie der Stadt, festgehalten in einem ruhigen, editorialen Stil.</p>
+      <a href="#galerie" class="button button--primary">Zur Galerie</a>
+    </div>
+  </section>
+
+  <section id="galerie" class="galerie">
+    <div class="container">
+      <div class="abschnitt-kopf">
+        <h2>Galerie</h2>
+        <p class="abschnitt-kopf__text">Eine Auswahl aktueller Arbeiten, sortierbar nach Kategorie. Hinweis: Diese Vorschaubilder sind bewusst gestaltete, abstrakte CSS/SVG-Grafiken — ein gestalterischer Platzhalter für echte Fotografie.</p>
+      </div>
+
+      <div class="filter-leiste" role="group" aria-label="Galerie nach Kategorie filtern">
+        <button type="button" class="filter-btn" data-filter="Alle" aria-pressed="true">Alle</button>
+        <button type="button" class="filter-btn" data-filter="Porträt" aria-pressed="false">Porträt</button>
+        <button type="button" class="filter-btn" data-filter="Landschaft" aria-pressed="false">Landschaft</button>
+        <button type="button" class="filter-btn" data-filter="Architektur" aria-pressed="false">Architektur</button>
+        <button type="button" class="filter-btn" data-filter="Reportage" aria-pressed="false">Reportage</button>
+      </div>
+
+      <p id="galerie-leer" class="galerie-leer" hidden>Für diese Kategorie sind aktuell keine Arbeiten hinterlegt.</p>
+
+      <div id="galerie-grid" class="galerie-grid">
+        <!-- Kacheln werden von src/main.ts generiert -->
+      </div>
+    </div>
+  </section>
+
+  <section id="ueber-mich" class="ueber-mich">
+    <div class="container ueber-mich__inner">
+      <div class="ueber-mich__art" aria-hidden="true">
+        <div class="foto-kachel__art art-v2"></div>
+      </div>
+      <div class="ueber-mich__text">
+        <h2>Über mich</h2>
+        <p>Ich bin Nora Vahlberg, Gründerin von <strong>Lichtform Fotografie</strong>. Seit 2016 arbeite ich als Fotografin mit Schwerpunkt auf Porträt- und Architekturaufnahmen, nach einer Ausbildung an der fiktiven Akademie für visuelle Gestaltung in Leipzig.</p>
+        <p>Mein Zugang ist zurückhaltend und präzise: natürliches Licht, klare Linien und Momente, die für sich selbst sprechen. Ob stille Porträtsitzung, weites Landschaftslicht oder die Textur einer Fassade — mich interessiert der Punkt, an dem Form und Gefühl zusammenfinden.</p>
+        <p>Diese Seite ist eine <strong>Demo-Portfolioseite</strong> zu Übungszwecken und zeigt keine reale Auftragsarbeit.</p>
+        <ul class="ueber-mich__fakten">
+          <li><span>Standort</span>Leipzig, Deutschland (fiktiv)</li>
+          <li><span>Tätig seit</span>2016</li>
+          <li><span>Schwerpunkte</span>Porträt, Architektur, Reportage</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="kontakt">
+    <div class="container kontakt__inner">
+      <div class="abschnitt-kopf">
+        <h2>Kontakt</h2>
+        <p class="abschnitt-kopf__text">Anfragen für Shootings, Kooperationen oder einfach eine Frage — ich freue mich auf Ihre Nachricht. (Dieses Formular ist Teil einer Demo und versendet keine echten Nachrichten.)</p>
+      </div>
+
+      <form id="kontakt-formular" class="kontakt-formular" novalidate>
+        <div class="feld">
+          <label for="kontakt-name">Name</label>
+          <input type="text" id="kontakt-name" name="name" autocomplete="name">
+          <p class="feld-fehler" id="kontakt-name-fehler" role="alert"></p>
+        </div>
+
+        <div class="feld">
+          <label for="kontakt-email">E-Mail</label>
+          <input type="email" id="kontakt-email" name="email" autocomplete="email">
+          <p class="feld-fehler" id="kontakt-email-fehler" role="alert"></p>
+        </div>
+
+        <div class="feld">
+          <label for="kontakt-anlass">Anlass</label>
+          <select id="kontakt-anlass" name="anlass">
+            <option value="portraet">Porträtshooting</option>
+            <option value="architektur">Architekturaufnahmen</option>
+            <option value="reportage">Reportage / Event</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+        </div>
+
+        <div class="feld">
+          <label for="kontakt-nachricht">Nachricht</label>
+          <textarea id="kontakt-nachricht" name="nachricht" rows="5"></textarea>
+          <p class="feld-fehler" id="kontakt-nachricht-fehler" role="alert"></p>
+        </div>
+
+        <button type="submit" class="button button--primary">Nachricht senden</button>
+        <p id="kontakt-status" class="kontakt-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fusszeile">
+  <div class="container fusszeile__inner">
+    <div>
+      <p class="fusszeile__logo">Lichtform Fotografie</p>
+      <p>Leipzig · Deutschland (fiktives Demo-Studio)</p>
+    </div>
+    <div class="fusszeile__links">
+      <span>Instagram</span>
+      <span>Behance</span>
+      <span>500px</span>
+    </div>
+    <p class="fusszeile__copy">© 2026 Lichtform Fotografie — Demo-Projekt, keine reale Firma.</p>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+  <div class="lightbox__inner">
+    <button type="button" id="lightbox-close" class="lightbox__close" aria-label="Ansicht schließen">&times;</button>
+    <button type="button" id="lightbox-prev" class="lightbox__nav lightbox__nav--prev" aria-label="Vorheriges Foto">&#8249;</button>
+    <button type="button" id="lightbox-next" class="lightbox__nav lightbox__nav--next" aria-label="Nächstes Foto">&#8250;</button>
+
+    <div class="lightbox__stage">
+      <div id="lightbox-art" class="lightbox__art" aria-hidden="true"></div>
+      <div class="lightbox__info">
+        <span id="lightbox-tag" class="lightbox__tag"></span>
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-meta" class="lightbox__meta"></p>
+        <p id="lightbox-beschreibung" class="lightbox__beschreibung"></p>
+        <p id="lightbox-counter" class="lightbox__counter"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="dist/main.js"></script>
+</body>
+</html>

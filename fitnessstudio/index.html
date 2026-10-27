@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IronFlow Studio – Dein Fitnessstudio in Frankfurt</title>
+<meta name="description" content="IronFlow Studio – fiktives Demo-Projekt eines Fitnessstudios mit Kursplan, Mitgliedschaften, Trainingsziel-Rechner und Anmeldeformular." />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#hauptinhalt" style="position:absolute;left:-9999px;">Zum Hauptinhalt springen</a>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="nav__logo">
+      <svg class="nav__logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="17" width="6" height="6" rx="1.5" fill="#d7ff3f"/>
+        <rect x="10" y="12" width="5" height="16" rx="1.5" fill="#d7ff3f"/>
+        <rect x="17" y="6" width="6" height="28" rx="1.5" fill="#f4f4f2"/>
+        <rect x="25" y="12" width="5" height="16" rx="1.5" fill="#ff5a1f"/>
+        <rect x="32" y="17" width="6" height="6" rx="1.5" fill="#ff5a1f"/>
+      </svg>
+      IronFlow<span style="color:var(--color-primary)">.</span>Studio
+    </a>
+
+    <nav id="nav-menu" class="nav__menu" aria-label="Hauptnavigation">
+      <a href="#kursplan">Kursplan</a>
+      <a href="#mitgliedschaften">Mitgliedschaften</a>
+      <a href="#rechner">Trainingsziel-Rechner</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="button button--primary nav__cta">Probetraining sichern</a>
+    </nav>
+
+    <button id="nav-toggle" class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="22" height="2.4" rx="1.2" fill="currentColor"/>
+        <rect y="6.8" width="22" height="2.4" rx="1.2" fill="currentColor"/>
+        <rect y="13.6" width="22" height="2.4" rx="1.2" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="hauptinhalt">
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div>
+        <span class="eyebrow">Fiktives Demo-Projekt · Fitnessstudio</span>
+        <h1 class="hero__headline">Trainiere stärker. <em>Werde IronFlow.</em></h1>
+        <p class="hero__lead">
+          Funktionelles Training, Krafttraining, Yoga und HIIT unter einem Dach —
+          mit persönlicher Betreuung, modernem Equipment und einem Kursplan,
+          der zu deinem Alltag passt.
+        </p>
+        <div class="hero__actions">
+          <a href="#kontakt" class="button button--primary">Kostenloses Probetraining</a>
+          <a href="#kursplan" class="button button--outline">Kursplan ansehen</a>
+        </div>
+        <div class="hero__stats">
+          <div>
+            <span class="hero__stat-wert">12+</span>
+            <span class="hero__stat-label">Kursformate</span>
+          </div>
+          <div>
+            <span class="hero__stat-wert">6</span>
+            <span class="hero__stat-label">Trainer:innen</span>
+          </div>
+          <div>
+            <span class="hero__stat-wert">24/7</span>
+            <span class="hero__stat-label">Zugang (Premium)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__blob"></div>
+        <svg class="hero__svg" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="110" cy="70" r="26" fill="#d7ff3f"/>
+          <path d="M110 96 C 80 100, 70 130, 78 165 L 100 210 L 120 210 L 112 168 L 130 168 L 145 210 L 165 210 L 148 155 C 152 125, 140 100, 110 96 Z" fill="#f4f4f2"/>
+          <path d="M78 120 L 45 105" stroke="#ff5a1f" stroke-width="10" stroke-linecap="round"/>
+          <path d="M140 118 L 172 100" stroke="#ff5a1f" stroke-width="10" stroke-linecap="round"/>
+          <rect x="24" y="92" width="26" height="26" rx="6" fill="#ff5a1f"/>
+          <rect x="168" y="82" width="26" height="26" rx="6" fill="#ff5a1f"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= KURSPLAN ============================= -->
+  <section class="kursplan" id="kursplan">
+    <div class="container">
+      <div class="section-kopf">
+        <span class="eyebrow">Kursübersicht</span>
+        <h2 class="section-titel">Unser Kursplan</h2>
+        <p class="section-text">Finde den passenden Kurs nach Wochentag oder Kategorie – alle Kurse werden dynamisch aus den Kursdaten geladen.</p>
+      </div>
+
+      <div class="kursplan__filter">
+        <div class="filter-tag-auswahl">
+          <label for="filter-tag">Wochentag</label>
+          <select id="filter-tag" name="filter-tag"></select>
+        </div>
+        <div id="filter-kategorie" role="group" aria-label="Nach Kategorie filtern"></div>
+      </div>
+
+      <div id="kursplan-liste" class="kursplan__liste" aria-live="polite">
+        <!-- wird via TypeScript befüllt -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= MITGLIEDSCHAFTEN ============================= -->
+  <section id="mitgliedschaften">
+    <div class="container">
+      <div class="section-kopf section-kopf--zentriert">
+        <span class="eyebrow">Mitgliedschaften</span>
+        <h2 class="section-titel">Wähle dein Modell</h2>
+        <p class="section-text">Transparente Preise, jederzeit monatlich kündbar. Kein versteckter Aufpreis.</p>
+      </div>
+
+      <div id="tarife-liste" class="tarife__liste">
+        <!-- wird via TypeScript befüllt -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= TRAININGSZIEL-RECHNER ============================= -->
+  <section class="rechner" id="rechner">
+    <div class="container">
+      <div class="section-kopf">
+        <span class="eyebrow">Interaktives Tool</span>
+        <h2 class="section-titel">Trainingsziel-Rechner</h2>
+        <p class="section-text">
+          Berechne deinen BMI und deinen ungefähren täglichen Kalorienbedarf
+          (Mifflin-St-Jeor-Formel) auf Basis deiner Angaben.
+        </p>
+      </div>
+
+      <div class="rechner__karte">
+        <form id="rechner-formular" novalidate>
+          <div class="formular-zeile">
+            <div class="formular-feld">
+              <label for="alter">Alter (Jahre)</label>
+              <input type="number" id="alter" name="alter" min="1" max="120" placeholder="z. B. 28" required />
+            </div>
+            <div class="formular-feld">
+              <label for="geschlecht">Geschlecht</label>
+              <select id="geschlecht" name="geschlecht">
+                <option value="weiblich">Weiblich</option>
+                <option value="maennlich">Männlich</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="formular-zeile">
+            <div class="formular-feld">
+              <label for="groesse">Körpergröße (cm)</label>
+              <input type="number" id="groesse" name="groesse" min="1" max="250" placeholder="z. B. 175" required />
+            </div>
+            <div class="formular-feld">
+              <label for="gewicht">Gewicht (kg)</label>
+              <input type="number" id="gewicht" name="gewicht" min="1" max="400" step="0.1" placeholder="z. B. 72" required />
+            </div>
+          </div>
+
+          <div class="formular-feld">
+            <label for="aktivitaet">Aktivitätslevel</label>
+            <select id="aktivitaet" name="aktivitaet">
+              <option value="kaum">Kaum aktiv (Bürojob, kein Sport)</option>
+              <option value="leicht">Leicht aktiv (1–3x Sport/Woche)</option>
+              <option value="moderat" selected>Moderat aktiv (3–5x Sport/Woche)</option>
+              <option value="hoch">Sehr aktiv (6–7x Sport/Woche)</option>
+              <option value="sehrHoch">Extrem aktiv (körperliche Arbeit + Sport)</option>
+            </select>
+          </div>
+
+          <div id="rechner-fehler" class="meldungsbox meldungsbox--fehler" hidden></div>
+
+          <button type="submit" class="button button--primary button--block">Jetzt berechnen</button>
+        </form>
+
+        <div class="rechner__ergebnis-spalte">
+          <div id="rechner-ergebnis" hidden></div>
+          <div class="hinweisbox" id="rechner-platzhalter">
+            Trage links deine Daten ein und klicke auf „Jetzt berechnen“, um deinen
+            BMI und deinen täglichen Kalorienbedarf zu sehen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= KONTAKT / ANMELDUNG ============================= -->
+  <section id="kontakt">
+    <div class="container">
+      <div class="section-kopf">
+        <span class="eyebrow">Kontakt & Anmeldung</span>
+        <h2 class="section-titel">Starte jetzt bei IronFlow</h2>
+        <p class="section-text">Trage dich unverbindlich ein – wir melden uns innerhalb von 24 Stunden bei dir.</p>
+      </div>
+
+      <div class="kontakt__grid">
+        <div class="kontakt__info-karte">
+          <h3>So erreichst du uns</h3>
+          <div class="kontakt__info-liste">
+            <div class="kontakt__info-eintrag">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 22s7-6.1 7-12A7 7 0 1 0 5 10c0 5.9 7 12 7 12z" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <div>
+                <strong>Adresse</strong>
+                <span>Musterstraße 12, 60313 Frankfurt am Main</span>
+              </div>
+            </div>
+            <div class="kontakt__info-eintrag">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M4 6l8 7 8-7" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <div>
+                <strong>E-Mail</strong>
+                <span>hallo@ironflow-studio.example</span>
+              </div>
+            </div>
+            <div class="kontakt__info-eintrag">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2C9.6 22 2 14.4 2 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <div>
+                <strong>Telefon</strong>
+                <span>0611 / 555 01 23</span>
+              </div>
+            </div>
+            <div class="kontakt__info-eintrag">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <div>
+                <strong>Öffnungszeiten</strong>
+                <span>Mo–Fr 6–22 Uhr, Sa 8–16 Uhr</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form id="anmeldung-formular" class="anmeldung-formular" novalidate>
+          <div class="formular-feld">
+            <label for="name">Vollständiger Name</label>
+            <input type="text" id="name" name="name" placeholder="Vor- und Nachname" />
+            <span class="fehlertext" data-fehler-fuer="name"></span>
+          </div>
+
+          <div class="formular-zeile">
+            <div class="formular-feld">
+              <label for="email">E-Mail-Adresse</label>
+              <input type="email" id="email" name="email" placeholder="name@beispiel.de" />
+              <span class="fehlertext" data-fehler-fuer="email"></span>
+            </div>
+            <div class="formular-feld">
+              <label for="telefon">Telefon (optional)</label>
+              <input type="tel" id="telefon" name="telefon" placeholder="0151 23456789" />
+              <span class="fehlertext" data-fehler-fuer="telefon"></span>
+            </div>
+          </div>
+
+          <div class="formular-feld">
+            <label for="anmeldung-tarif">Interessiert an</label>
+            <select id="anmeldung-tarif" name="tarif">
+              <option value="basic">Basic</option>
+              <option value="premium" selected>Premium</option>
+              <option value="elite">Elite</option>
+              <option value="unsicher">Noch unsicher / Beratung gewünscht</option>
+            </select>
+          </div>
+
+          <div class="formular-feld">
+            <label for="nachricht">Nachricht</label>
+            <textarea id="nachricht" name="nachricht" rows="4" placeholder="Erzähl uns kurz von deinen Trainingszielen …"></textarea>
+            <span class="fehlertext" data-fehler-fuer="nachricht"></span>
+          </div>
+
+          <div id="anmeldung-erfolg" class="meldungsbox meldungsbox--erfolg" hidden></div>
+
+          <button type="submit" class="button button--primary button--block">Unverbindlich anfragen</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__marke">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="17" width="6" height="6" rx="1.5" fill="#d7ff3f"/>
+            <rect x="10" y="12" width="5" height="16" rx="1.5" fill="#d7ff3f"/>
+            <rect x="17" y="6" width="6" height="28" rx="1.5" fill="#f4f4f2"/>
+            <rect x="25" y="12" width="5" height="16" rx="1.5" fill="#ff5a1f"/>
+            <rect x="32" y="17" width="6" height="6" rx="1.5" fill="#ff5a1f"/>
+          </svg>
+          IronFlow Studio
+        </div>
+        <p class="footer__text">
+          Ein fiktives Fitnessstudio-Konzept für Frankfurt am Main –
+          erstellt als Programmier-Demo, kein echtes Unternehmen.
+        </p>
+        <div class="footer__social">
+          <a href="#top" aria-label="Instagram (Demo-Link)">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#top" aria-label="Facebook (Demo-Link)">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M14 9h2V6h-2c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#top" aria-label="TikTok (Demo-Link)">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M15 4v9.5a3.5 3.5 0 1 1-3-3.46" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M15 4c.3 2 1.8 3.4 4 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__spalte">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#kursplan">Kursplan</a></li>
+          <li><a href="#mitgliedschaften">Mitgliedschaften</a></li>
+          <li><a href="#rechner">Trainingsziel-Rechner</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__spalte">
+        <h4>Kontakt</h4>
+        <address>
+          IronFlow Studio (fiktiv)<br />
+          Musterstraße 12<br />
+          60313 Frankfurt am Main<br />
+          hallo@ironflow-studio.example
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__unten">
+      <span>&copy; <span id="aktuelles-jahr">2026</span> IronFlow Studio — Portfolio-Demoprojekt, kein echtes Unternehmen.</span>
+      <span>Gestaltet &amp; entwickelt als Übungsprojekt (HTML, CSS, TypeScript)</span>
+    </div>
+  </div>
+</footer>
+
+<script src="dist/main.js"></script>
+</body>
+</html>

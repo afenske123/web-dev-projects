@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentrix – Observability &amp; Incident Intelligence für Ops-Teams</title>
+<meta name="description" content="Sentrix ist eine fiktive B2B-SaaS-Plattform für Infrastruktur-Monitoring und Incident-Management. Portfolio-Demoprojekt, kein reales Produkt.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#hauptinhalt">Zum Hauptinhalt springen</a>
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28" focusable="false">
+          <rect x="2" y="16" width="6" height="14" rx="1.5" fill="currentColor" opacity="0.55"></rect>
+          <rect x="13" y="8" width="6" height="22" rx="1.5" fill="currentColor" opacity="0.8"></rect>
+          <rect x="24" y="2" width="6" height="28" rx="1.5" fill="currentColor"></rect>
+        </svg>
+      </span>
+      <span class="brand-name">Sentrix</span>
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="#funktionen">Funktionen</a>
+      <a href="#kalkulator">Preise</a>
+      <a href="#vergleich">Vergleich</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-primary btn-small" href="#kontakt">Demo anfragen</a>
+  </div>
+</header>
+
+<main id="hauptinhalt">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="shell hero-inner">
+      <p class="eyebrow">Observability-Plattform für Engineering-Teams</p>
+      <h1>Störungen erkennen, <span class="text-accent">bevor</span> sie zu Incidents werden.</h1>
+      <p class="hero-sub">
+        Sentrix bündelt Metriken, Logs und Alarmierung in einer Oberfläche und gibt Ihrem Ops-Team
+        die Signalklarheit, um Ausfälle in Minuten statt Stunden zu beheben. Aufgebaut für Teams,
+        die verteilte Systeme in Enterprise-Umgebungen zuverlässig betreiben.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#kontakt">Demo anfragen</a>
+        <a class="btn btn-ghost" href="#kalkulator">Preise kalkulieren</a>
+      </div>
+      <dl class="hero-stats">
+        <div class="hero-stat">
+          <dt>Mittlere Erkennungszeit</dt>
+          <dd>&lt; 45&nbsp;s</dd>
+        </div>
+        <div class="hero-stat">
+          <dt>Uptime SLA</dt>
+          <dd>99,95&nbsp;%</dd>
+        </div>
+        <div class="hero-stat">
+          <dt>Integrationen</dt>
+          <dd>60+</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- TRUSTED BY -->
+  <section class="trusted-by" aria-labelledby="trusted-by-heading">
+    <div class="shell">
+      <p class="trusted-by-heading" id="trusted-by-heading">Vertraut von Ops- und Plattformteams bei</p>
+      <ul class="trusted-by-list" id="trusted-by-list" aria-label="Referenzkunden (fiktiv)">
+        <!-- wird von main.ts befüllt -->
+      </ul>
+      <p class="trusted-by-disclaimer">* Alle genannten Unternehmen sind fiktiv und dienen ausschließlich Demonstrationszwecken.</p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="funktionen">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow">Funktionsübersicht</p>
+        <h2>Eine Plattform für den gesamten Incident-Lifecycle</h2>
+        <p class="section-sub">Von der ersten Anomalie bis zum Post-Mortem – Sentrix deckt jeden Schritt ab.</p>
+      </div>
+      <div class="features-grid" id="features-grid">
+        <!-- wird von main.ts befüllt -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING CALCULATOR -->
+  <section class="calculator" id="kalkulator">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow">Preisrechner</p>
+        <h2>Transparente, seat-basierte Preisgestaltung</h2>
+        <p class="section-sub">Bewegen Sie den Regler und sehen Sie den monatlichen Preis inklusive automatischem Mengenrabatt.</p>
+      </div>
+
+      <div class="calculator-panel">
+        <div class="calculator-controls">
+          <label class="calculator-label" for="seat-slider">
+            Anzahl Nutzer (Seats): <strong><span id="seat-count">10</span></strong>
+          </label>
+          <input
+            type="range"
+            id="seat-slider"
+            name="seat-slider"
+            min="1"
+            max="100"
+            step="1"
+            value="10"
+            aria-describedby="seat-hint"
+          >
+          <p class="calculator-hint" id="seat-hint">Gilt für den Business-Plan · Grundgebühr + Preis pro Seat</p>
+
+          <ul class="calculator-formula">
+            <li>Grundgebühr: <strong id="base-fee-display">49,00&nbsp;€</strong> / Monat</li>
+            <li>Pro Seat: <strong id="per-seat-display">19,00&nbsp;€</strong> / Monat</li>
+            <li>Mengenrabatt: <strong>ab 10 Seats −10&nbsp;%</strong>, <strong>ab 25 Seats −20&nbsp;%</strong></li>
+          </ul>
+        </div>
+
+        <div class="calculator-result" aria-live="polite">
+          <span class="calculator-result-label">Geschätzter Preis pro Monat</span>
+          <span class="calculator-price" id="price-per-month">169,00&nbsp;€</span>
+          <span class="calculator-discount" id="discount-badge" hidden>Rabatt aktiv</span>
+          <dl class="calculator-breakdown">
+            <div>
+              <dt>Zwischensumme</dt>
+              <dd id="price-subtotal">239,00&nbsp;€</dd>
+            </div>
+            <div>
+              <dt>Rabatt</dt>
+              <dd id="price-discount-amount">0&nbsp;%</dd>
+            </div>
+            <div>
+              <dt>Jährlich (bei monatlicher Zahlweise)</dt>
+              <dd id="price-yearly">2.028,00&nbsp;€</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="comparison" id="vergleich">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow">Plan-Vergleich</p>
+        <h2>Der passende Plan für jede Team-Größe</h2>
+        <p class="section-sub">Alle Pläne beinhalten Kern-Monitoring – die Unterschiede liegen in Tiefe, Automatisierung und Support.</p>
+      </div>
+
+      <div class="table-scroll">
+        <table class="comparison-table" id="comparison-table">
+          <thead id="comparison-thead">
+            <!-- wird von main.ts befüllt -->
+          </thead>
+          <tbody id="comparison-tbody">
+            <!-- wird von main.ts befüllt -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section class="contact" id="kontakt">
+    <div class="shell contact-inner">
+      <div class="contact-copy">
+        <p class="eyebrow">Demo anfragen</p>
+        <h2>Sehen Sie Sentrix in Aktion</h2>
+        <p class="section-sub">
+          Ein 30-minütiges Gespräch, in dem wir Ihre Alerting- und Monitoring-Landschaft anschauen
+          und zeigen, wie Sentrix sich in Ihren Stack integriert.
+        </p>
+        <ul class="contact-points">
+          <li>Individuelle Live-Demo mit Ihren realen Use-Cases</li>
+          <li>Unverbindliches Angebot innerhalb von 48&nbsp;Stunden</li>
+          <li>Antwort direkt vom Solutions-Engineering-Team</li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="demo-form" novalidate>
+        <h3 class="visually-hidden">Kontaktformular</h3>
+
+        <div class="form-row">
+          <label for="input-name">Name*</label>
+          <input type="text" id="input-name" name="name" autocomplete="name">
+          <span class="form-error" id="error-name" role="alert"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="input-email">Geschäftliche E-Mail*</label>
+          <input type="text" id="input-email" name="email" autocomplete="email" inputmode="email">
+          <span class="form-error" id="error-email" role="alert"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="input-company">Unternehmen*</label>
+          <input type="text" id="input-company" name="company" autocomplete="organization">
+          <span class="form-error" id="error-company" role="alert"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="input-seats">Geschätzte Teamgröße</label>
+          <select id="input-seats" name="seats">
+            <option value="1-9">1–9 Nutzer</option>
+            <option value="10-24">10–24 Nutzer</option>
+            <option value="25-99">25–99 Nutzer</option>
+            <option value="100+">100+ Nutzer</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="input-message">Nachricht</label>
+          <textarea id="input-message" name="message" rows="3"></textarea>
+          <span class="form-error" id="error-message" role="alert"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Demo anfragen</button>
+
+        <p class="form-success" id="form-success" hidden role="status">
+          Danke! Ihre Anfrage wurde erfasst (Demo-Simulation, es wird nichts versendet). Unser Team meldet sich innerhalb von 48&nbsp;Stunden.
+        </p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="22" height="22" focusable="false">
+          <rect x="2" y="16" width="6" height="14" rx="1.5" fill="currentColor" opacity="0.55"></rect>
+          <rect x="13" y="8" width="6" height="22" rx="1.5" fill="currentColor" opacity="0.8"></rect>
+          <rect x="24" y="2" width="6" height="28" rx="1.5" fill="currentColor"></rect>
+        </svg>
+      </span>
+      <span>Sentrix</span>
+    </div>
+    <p class="footer-note">
+      Dies ist ein fiktives Produkt für ein persönliches Portfolio-Demoprojekt. Kein reales Unternehmen,
+      keine realen Kunden, keine realen Preise.
+    </p>
+    <p class="footer-copy">© 2026 Sentrix Demo · Portfolio-Projekt von Alexander Fenske</p>
+  </div>
+</footer>
+
+<script src="dist/main.js" defer></script>
+</body>
+</html>
